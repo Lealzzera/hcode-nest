@@ -96,7 +96,6 @@ export class AuthController {
     @User() user,
     @UploadedFiles() files: Express.Multer.File[],
   ) {
-    console.log(files.length);
     try {
       const path = join(__dirname, '..', '..', 'storage', 'photos');
       await this.fileService.uploadMultipleFiles(files, path);
